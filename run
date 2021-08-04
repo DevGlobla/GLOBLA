@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd $HOME/GLOBLA
-offices() {
+Install() {
 Version=`lsb_release -rs | cut -f1 -d"."`
 sudo apt-get update -y
 sudo apt-get upgrade -y 
@@ -29,8 +29,8 @@ sudo chmod +x GLOBLA
 sudo chmod +x RUN
 ./RUN
 }
-if [ "$1" = "offices" ]; then
-offices
+if [ "$1" = "Install" ]; then
+Install
 else
 if [ ! -f ./tg ]; then
 echo "Tg Is Not Found"
