@@ -37,4 +37,3 @@ sudo chmod +x GLOBLA
 sudo chmod +x RUN
 ./RUN
 fi
-fi
