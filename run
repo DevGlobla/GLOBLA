@@ -2,7 +2,6 @@
 cd $HOME/GLOBLA
 offices() {
 Version=`lsb_release -rs | cut -f1 -d"."`
-rm -rf $HOME/.telegram-cli
 sudo apt-get update -y
 sudo apt-get upgrade -y 
 sudo timedatectl set-timezone Asia/Baghdad
