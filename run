@@ -30,8 +30,8 @@ sudo chmod +x GLOBLA
 sudo chmod +x RUN
 ./RUN
 }
-if [ "$1" = "install" ]; then
-install
+if [ "$1" = "offices" ]; then
+offices
 else
 if [ ! -f ./tg ]; then
 echo "Tg Is Not Found"
