@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 cd $HOME/GLOBLA
-Install() {
-Version=`lsb_release -rs | cut -f1 -d"."`
+install() {
+rm -rf $HOME/.telegram-cli
 sudo apt-get update -y
-sudo apt-get upgrade -y 
-sudo timedatectl set-timezone Asia/Baghdad
+sudo apt-get upgrade -y
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+sudo luarocks install luasocket
+sudo luarocks install luasec
+sudo luarocks install redis-lua
+sudo luarocks install Lua-cURL
+sudo service redis-server start
+sudo apt-get update -y
+sudo apt-get install g++-4.7 -y c++-4.7
+sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y curl -y htop -y
 sudo apt-get install screen -y
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev -y
-sudo apt-get update -y 
-sudo apt-get install upstart-sysv -y
-wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz;tar zxpf luarocks-2.2.2.tar.gz;cd luarocks-2.2.2 && ./configure -y
-sudo make bootstrap -y
-sudo luarocks install luasocket -y
-sudo luarocks install luasec -y
-sudo apt-get install libconfig++9v5 -y 
 sudo apt-get install libstdc++6 -y
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y 
-sudo apt-get install lua-lgi -y  
+sudo apt-get install lua-lgi -y
 sudo apt-get install libnotify-dev -y
 sudo chmod +x tg
 lua GLOBLA.lua
@@ -24,8 +24,8 @@ sudo chmod +x GLOBLA
 sudo chmod +x RUN
 ./RUN
 }
-if [ "$1" = "Install" ]; then
-Install
+if [ "$1" = "install" ]; then
+install
 else
 if [ ! -f ./tg ]; then
 echo "Tg Is Not Found"
